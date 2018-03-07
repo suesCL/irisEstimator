@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Iris Classfier</title>
+	</head>
+  
+	<body>
+
+		<h2>Please enter iris sizes:</h2>
+
+		{% from "_formhelpers.html" import render_field %}
+
+		<form method=post action="/result">
+			<dl>
+				<dt>
+					{{ render_field(form.petal_length, cols='30', rows='10') }}
+				</dt>
+				<dt>
+					{{ render_field(form.petal_width, cols='30', rows='10') }}
+				</dt>
+				<dt>
+					{{ render_field(form.sepal_length, cols='30', rows='10') }}
+				</dt>
+				<dt>
+					{{ render_field(form.sepal_width, cols='30', rows='10') }}
+				</dt>
+			</dl>
+
+			<div>
+				<input type=submit value='Submit info' name='submit_btn'>
+			</div>
+		</form>
+	</body>
+</html>
